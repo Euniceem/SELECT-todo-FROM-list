@@ -34,11 +34,11 @@ VALUES ('mistake 1', 'a test entry'),
 ('mistake 2', 'another test entry'),
 ('third mistake', 'another test entry');
 
-SELECT title FROM tasks WHERE title = 'mistake';
+SELECT title FROM tasks WHERE title ~ 'mistake';
 DELETE FROM tasks WHERE title = 'mistake 1';
 
-SELECT title, description FROM tasks WHERE title = 'mistake';
-DELETE FROM tasks WHERE title = 'mistake';
+SELECT title, description FROM tasks WHERE title ~ 'mistake';
+DELETE FROM tasks WHERE title ~ 'mistake';
 
 SELECT * FROM tasks ORDER BY title ASC;
 
